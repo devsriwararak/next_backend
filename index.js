@@ -2,6 +2,7 @@ var express = require('express')
 var cors = require('cors')
 const mysql = require('mysql2');
 const fs = require('fs');
+const serverless = require ('serverless-http')
 
 
 const connection = mysql.createConnection({
@@ -18,8 +19,7 @@ app.use(express.static('public'));
 app.use('/images', express.static('images'));
 
 
-
-app.get('/products', async (req,res)=>{
+app.get('/api', async (req,res)=>{
 try {
     await connection.query(`SELECT * FROM lp`, (err,data, fielsd)=>{
         for (const result of data) {
