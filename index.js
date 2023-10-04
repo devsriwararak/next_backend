@@ -46,6 +46,6 @@ try {
 }
 })
 
-app.listen(5000, function () {
+app.listen(process.env.PORT || 5000, function () {
   console.log('CORS-enabled web server listening on port 5000')
 })
