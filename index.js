@@ -2,7 +2,6 @@ var express = require('express')
 var cors = require('cors')
 const mysql = require('mysql2');
 const fs = require('fs');
-const serverless = require ('serverless-http')
 
 
 const connection = mysql.createConnection({
